@@ -73,6 +73,9 @@ service/nginx created
 addresses get provisioned:
 
 ```
+# export KUBEGW_INTERFACE=lo
+# export KUBEGW_NETWORK=10.0.100.0/24
+# ./main.py
 INFO:root:using network 10.0.100.0/24
 INFO:root:using interface lo
 INFO:root:assuming address 10.0.100.30
