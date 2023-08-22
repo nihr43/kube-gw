@@ -21,18 +21,6 @@ def get_addresses(dev: str) -> list:
     return addresses
 
 
-def get_address_state(dev: str, address: str) -> bool:
-    """
-    determine whether a given address is already assigned
-    """
-    addresses = get_addresses(dev)
-
-    if address in addresses:
-        return True
-    else:
-        return False
-
-
 def provision_address(
     dev: str, address: str, netmask: str, initial_ips: list, logging
 ) -> None:
