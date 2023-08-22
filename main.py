@@ -76,7 +76,10 @@ if __name__ == "__main__":
         config.load_kube_config()
 
     network = os.getenv("KUBEGW_NETWORK")
-    interface = os.getenv("KUBEGW_INTERFACE")
+    interface = os.getenv("KUBEGW_INTERFACE") or "lo"
+
+    if not network:
+        raise RuntimeError("environment variable KUBEGW_NETWORK is required")
 
     logging.info("using network {}".format(network))
     logging.info("using interface {}".format(interface))
